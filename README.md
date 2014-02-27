@@ -26,7 +26,7 @@ If you want, you can pass a function to create your message for you.
 
 ```javascript
 notify(function(done) {
-
+    // asynchronous calls are supported as well
     setTimeout(function() {
         done('1 new message');
     }, 0);
