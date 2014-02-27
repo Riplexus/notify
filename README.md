@@ -1,10 +1,15 @@
 browser-notify
 ==============
 
-This small wrapper for the native Notification API 
-provides a neat interface and manages the permission 
-requesting as well as listener, which will be called 
-on notification bubble click.
+*Background: The Notification API allows you to notify your user even if the page 
+is currently not in focus. You can remind him of new emails, incoming articles or
+any important update in your application.*
+
+
+This is a small wrapper for the W3C-specified Notification API. It provides a neat 
+interface and manages the permission requesting. You can add multiple listeners, 
+which will be called on notification bubble click to perform any action fitting to 
+your message.
  
 ```javascript
 notify('1 new message');
@@ -21,6 +26,7 @@ If you want, you can pass a function to create your message for you.
 
 ```javascript
 notify(function(done) {
+
     setTimeout(function() {
         done('1 new message');
     }, 0);
@@ -38,7 +44,7 @@ document.querySelector('button').onclick = function() {
 }
 ```
 
-notify() exposes the current setting of the users desktop notifications.
+notify() exposes the current state of the users desktop notifications.
 
 ```javascript
 console.log(notify().state);
